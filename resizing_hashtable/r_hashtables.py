@@ -67,13 +67,13 @@ def hash_table_remove(hash_table, key):
 
     else:
         pair = hash_table.storage[slot]
-        if pair.next != None:
-            while pair.next != None:
-                if pair.next.key == key:
-                    pair.next = pair.next.next
 
-                    break
-                pair = pair.next
+        while pair.next != None:
+            if pair.next.key == key:
+                pair.next = pair.next.next
+
+                break
+
         else:
             if pair.key == key:
                 hash_table.storage[slot] = None
